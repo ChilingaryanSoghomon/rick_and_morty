@@ -6,19 +6,24 @@ import 'package:hive/hive.dart';
 import 'package:ric_and_morty/characters/domain/entities/character/character.dart';
 import 'package:ric_and_morty/core/error/exception.dart';
 
-abstract class HiveBox{
+abstract class HiveBox {
   static const String character = 'person_list';
 }
 
+abstract class CharacterLocalDataSource {
+  void characterToCache(List<Character> character);
 
+  Future<List<Character>> getLastCharactersFromCache();
+}
 
-class CharacterLocalDataSource {
-  Box<List<String>> hiveBox;
-  CharacterLocalDataSource({required this.hiveBox});
+class CharacterLocalDataSourceIm implements CharacterLocalDataSource {
+  final Box<List<String>> hiveBox;
+  CharacterLocalDataSourceIm({required this.hiveBox});
 
+  @override
   Future<List<Character>> getLastCharactersFromCache() async {
     final jsonCharactersList = hiveBox.get(HiveBox.character);
-       if (jsonCharactersList!.isNotEmpty) {
+    if (jsonCharactersList!.isNotEmpty) {
       return jsonCharactersList
           .map((person) => Character.fromJson(json.decode(person)))
           .toList();
@@ -27,6 +32,7 @@ class CharacterLocalDataSource {
     }
   }
 
+  @override
   void characterToCache(List<Character> character) {
     final List<String> jsonCharactersList =
         character.map((person) => json.encode(person.toJson())).toList();

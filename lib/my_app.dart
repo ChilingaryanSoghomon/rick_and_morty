@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              CharacterBloc(characterRepository: getIt<CharacterRepository>())
+              CharacterBloc(characterRepository: getIt<CharacterRepositoryIm>())
                 ..add(const CharacterLoadingPageEvent()),
         ),
         BlocProvider(
