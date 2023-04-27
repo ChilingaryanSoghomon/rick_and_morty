@@ -32,9 +32,9 @@ class CachedNetworkImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<InternetConnectionCubit, InternetConnectionStatus>(
+    return BlocBuilder<InternetConnectionCubit, InternetStatus>(
       builder: (context, state) {
-        if (state == InternetConnectionStatus.connected) {
+        if (state == InternetStatus.connected) {
           return CachedNetworkImage(
             width: imageSide,
             height: imageSide,

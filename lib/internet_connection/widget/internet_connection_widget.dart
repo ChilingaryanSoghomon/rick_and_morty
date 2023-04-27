@@ -15,9 +15,9 @@ class SneckBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<InternetConnectionCubit, InternetConnectionStatus>(
+    return BlocListener<InternetConnectionCubit, InternetStatus>(
       listener: (context, state) {
-        if (state == InternetConnectionStatus.disconnected) {
+        if (state == InternetStatus.disconnected) {
           scaffoldMessengerKey.currentState!.showSnackBar(
             const SnackBar(
               content: Center(
