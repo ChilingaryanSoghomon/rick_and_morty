@@ -19,7 +19,6 @@ class CharacterRemoteDataSource {
   static final CharacterRemoteDataSource _instance =
       CharacterRemoteDataSource._internal();
 
-
   Future<List<Character>> getAllCharacter(int page) =>
       _getCharacterFromUrl('${RickAndMortApi.personPage}$page');
 
@@ -27,7 +26,9 @@ class CharacterRemoteDataSource {
       _getCharacterFromUrl('${RickAndMortApi.personQuery}$query');
 
   Future<List<Character>> _getCharacterFromUrl(String url) async {
-    final response = await http.get(Uri.parse(url));
+    final response = await http
+        .get(Uri.parse(url))
+        .then((value) => Future.delayed(const Duration(seconds: 7)));
     if (response.statusCode == 200) {
       final persons = json.decode(response.body);
       return (persons['results'] as List)
