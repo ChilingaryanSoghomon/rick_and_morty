@@ -30,6 +30,7 @@ class CharacterRepositoryIm implements CharacterRepository {
     return await localDataSource.getLastCharactersFromCache();
   }
 
+  @override
   Future<List<Character>> searchPerson(String query) async {
     if (await networkInfo.isConnected) {
       try {

@@ -10,13 +10,13 @@ abstract class RickAndMortApi {
   static const String personQuery =
       'https://rickandmortyapi.com/api/character/?name=';
 }
-abstract class CharacterRemoteDataSource{
 
-
-  Future<List<Character>> getAllCharacter(int page) ;
-  Future<List<Character>> searchCharacter(String query) ;
+abstract class CharacterRemoteDataSource {
+  Future<List<Character>> getAllCharacter(int page);
+  Future<List<Character>> searchCharacter(String query);
 }
-class CharacterRemoteDataSourceIm implements  CharacterRemoteDataSource {
+
+class CharacterRemoteDataSourceIm implements CharacterRemoteDataSource {
   factory CharacterRemoteDataSourceIm() {
     return _instance;
   }
@@ -24,10 +24,11 @@ class CharacterRemoteDataSourceIm implements  CharacterRemoteDataSource {
   static final CharacterRemoteDataSourceIm _instance =
       CharacterRemoteDataSourceIm._internal();
 
-
+  @override
   Future<List<Character>> getAllCharacter(int page) =>
       _getCharacterFromUrl('${RickAndMortApi.personPage}$page');
 
+  @override
   Future<List<Character>> searchCharacter(String query) =>
       _getCharacterFromUrl('${RickAndMortApi.personQuery}$query');
 
