@@ -1,19 +1,23 @@
+
 import 'package:bloc/bloc.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:ric_and_morty/core/platform/network_info.dart';
 
 enum InternetStatusState { connected, disconnected }
 
+
+
 class InternetConnectionCubit extends Cubit<InternetStatusState> {
-  final InternetConnectionChecker _internetConnectionChecker;
-  InternetConnectionCubit({required internetConnectionChecker})
-      : _internetConnectionChecker = internetConnectionChecker,
+  final NetworkInfo _networkInfo;
+  InternetConnectionCubit(
+      {required networkInfo})
+      : _networkInfo = networkInfo,
         super((InternetStatusState.connected)) {
-    _internetConnectionChecker.onStatusChange.listen((status) {
+    _networkInfo.networkConnectionStream.listen((status) {
       switch (status) {
-        case InternetConnectionStatus.connected:
+        case NetworkConnectionChecker.connected:
           emit(InternetStatusState.connected);
           break;
-        case InternetConnectionStatus.disconnected:
+        case NetworkConnectionChecker.disconnected:
           emit(InternetStatusState.disconnected);
           break;
       }

@@ -16,11 +16,11 @@ abstract class CharacterRemoteDataSource {
   Future<List<Character>> searchCharacter(String query);
 }
 
-class CharacterRemoteDataSourceIm implements CharacterRemoteDataSource {
-  factory CharacterRemoteDataSourceIm() => _instance;
-  CharacterRemoteDataSourceIm._internal();
-  static final CharacterRemoteDataSourceIm _instance =
-      CharacterRemoteDataSourceIm._internal();
+class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
+  factory CharacterRemoteDataSourceImpl() => _instance;
+  CharacterRemoteDataSourceImpl._internal();
+  static final CharacterRemoteDataSourceImpl _instance =
+      CharacterRemoteDataSourceImpl._internal();
 
   @override
   Future<List<Character>> getAllCharacter(int page) =>

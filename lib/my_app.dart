@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:ric_and_morty/core/platform/network_info.dart';
 import 'package:ric_and_morty/feature/characters/data/repository/character_repository.dart';
 import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
 import 'package:ric_and_morty/feature/internet_connection/cubit/internet_connection_cubit.dart';
@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
                 ..add(const CharacterLoadingPageEvent()),
         ),
         BlocProvider(
-          create: (context) => InternetConnectionCubit(
-              internetConnectionChecker: getIt<InternetConnectionChecker>()),
+          create: (context) =>
+              InternetConnectionCubit(networkInfo: getIt<NetworkInfo>()),
         ),
       ],
       child: MaterialApp(

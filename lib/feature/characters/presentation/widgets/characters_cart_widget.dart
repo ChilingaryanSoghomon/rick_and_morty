@@ -20,10 +20,10 @@ class CharactersCartWidget extends StatelessWidget {
       child: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) {
           List<Character> characters = [];
-          if (state is CharacterEmptyState) {
+          if (state is CharacterErrorState) {
             return const Center(
               child: Text(
-                'character with this name not found',
+                'characters not founds',
                 style: TextStyle(fontSize: 18),
               ),
             );

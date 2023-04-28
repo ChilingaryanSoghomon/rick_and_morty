@@ -15,9 +15,9 @@ abstract class CharacterLocalDataSource {
   Future<List<Character>> getLastCharactersFromCache();
 }
 
-class CharacterLocalDataSourceIm implements CharacterLocalDataSource {
+class CharacterLocalDataSourceImpl implements CharacterLocalDataSource {
   final Box<List<String>> hiveBox;
-  CharacterLocalDataSourceIm({required this.hiveBox});
+  CharacterLocalDataSourceImpl({required this.hiveBox});
 
 
   @override

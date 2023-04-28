@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
@@ -65,7 +66,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         emit(CharacterLoadedSearchState(character: searchCharacters));
       }
     } catch (e) {
-      emit(const CharacterEmptyState());
+      emit(const CharacterErrorState());
     }
   }
 }
