@@ -3,10 +3,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
+import 'package:ric_and_morty/feature/characters/presentation/widgets/characters_cart_widget.dart';
+import 'package:ric_and_morty/feature/characters/presentation/widgets/custom_text_field_widget.dart';
 
-import 'package:ric_and_morty/characters/presentation/bloc/character_bloc.dart';
-import 'package:ric_and_morty/characters/presentation/widgets/characters_cart_widget.dart';
-import 'package:ric_and_morty/characters/presentation/widgets/custom_text_field_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

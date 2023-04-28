@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ric_and_morty/characters/presentation/bloc/character_bloc.dart';
-import 'package:ric_and_morty/characters/presentation/widgets/character_card_widget.dart';
-import 'package:ric_and_morty/characters/presentation/widgets/character_lInitial_widget.dart';
+import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
+import 'package:ric_and_morty/feature/characters/presentation/widgets/character_card_widget.dart';
+import 'package:ric_and_morty/feature/characters/presentation/widgets/character_lInitial_widget.dart';
 
 import '../../domain/entities/character/character.dart';
 

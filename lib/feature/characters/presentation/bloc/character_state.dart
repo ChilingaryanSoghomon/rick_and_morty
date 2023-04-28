@@ -7,12 +7,14 @@ abstract class CharacterState extends Equatable {
   List<Object> get props => [];
 }
 
-class CharacterInitialState extends CharacterState {
-  const CharacterInitialState();
-}
 class CharacterEmptyState extends CharacterState {
   const CharacterEmptyState();
 }
+
+class CharacterInitialState extends CharacterState {
+  const CharacterInitialState();
+}
+
 class CharacterLoadingState extends CharacterState {
   final List<Character> oldCharacterList;
   final bool isFirstFetch;
@@ -28,6 +30,7 @@ class CharacterLoadedState extends CharacterState {
   const CharacterLoadedState({required this.character});
   final List<Character> character;
 }
+
 class CharacterLoadedSearchState extends CharacterState {
   const CharacterLoadedSearchState({required this.character});
   final List<Character> character;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ric_and_morty/characters/domain/entities/character/character.dart';
-import 'package:ric_and_morty/characters/presentation/widgets/vached_networkImage_widget.dart';
+import 'package:ric_and_morty/feature/characters/domain/entities/character/character.dart';
+import 'package:ric_and_morty/feature/characters/presentation/widgets/vached_networkImage_widget.dart';
 
 class CharactersCardWidget extends StatelessWidget {
   final Character character;
@@ -12,7 +12,7 @@ class CharactersCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _imageSide = MediaQuery.of(context).size.height / 5;
+    final double imageSide = MediaQuery.of(context).size.height / 5;
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -23,7 +23,7 @@ class CharactersCardWidget extends StatelessWidget {
         child: Row(
           children: [
             CachedNetworkImageWidget(
-              imageSide: _imageSide,
+              imageSide: imageSide,
               imageUrl: character.image,
             ),
             const SizedBox(

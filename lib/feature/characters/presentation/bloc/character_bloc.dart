@@ -1,10 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'package:ric_and_morty/characters/data/repository/character_repository.dart';
-import 'package:ric_and_morty/characters/domain/entities/character/character.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
+import 'package:ric_and_morty/feature/characters/domain/entities/character/character.dart';
+import 'package:ric_and_morty/feature/characters/domain/repositories/person_repository.dart';
 part 'character_event.dart';
 part 'character_state.dart';
 

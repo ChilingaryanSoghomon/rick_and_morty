@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:ric_and_morty/characters/domain/entities/character/character.dart';
 import 'package:ric_and_morty/core/error/exception.dart';
+import 'package:ric_and_morty/feature/characters/domain/entities/character/character.dart';
 
 abstract class RickAndMortApi {
   static const String personPage =
@@ -17,9 +17,7 @@ abstract class CharacterRemoteDataSource {
 }
 
 class CharacterRemoteDataSourceIm implements CharacterRemoteDataSource {
-  factory CharacterRemoteDataSourceIm() {
-    return _instance;
-  }
+  factory CharacterRemoteDataSourceIm() => _instance;
   CharacterRemoteDataSourceIm._internal();
   static final CharacterRemoteDataSourceIm _instance =
       CharacterRemoteDataSourceIm._internal();

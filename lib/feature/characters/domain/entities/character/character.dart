@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:ric_and_morty/characters/domain/entities/location/location.dart';
+import 'package:ric_and_morty/feature/characters/domain/entities/location/location.dart';
 
 part 'character.g.dart';
 
@@ -49,7 +49,7 @@ class Character extends Equatable {
 
       
   factory Character.fromJson(Map<String, dynamic> json) =>
-      _$CharacterEntityFromJson(json);
+      _$CharacterFromJson(json);
 
-   Map<String, dynamic> toJson() => _$CharacterEntityToJson(this);
+   Map<String, dynamic> toJson() => _$CharacterToJson(this);
 }

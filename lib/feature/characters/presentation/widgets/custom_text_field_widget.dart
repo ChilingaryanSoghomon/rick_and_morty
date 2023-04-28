@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ric_and_morty/characters/presentation/bloc/character_bloc.dart';
+import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({

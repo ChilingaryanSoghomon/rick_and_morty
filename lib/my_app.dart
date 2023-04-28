@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:ric_and_morty/characters/data/repository/character_repository.dart';
-import 'package:ric_and_morty/characters/presentation/bloc/character_bloc.dart';
-import 'package:ric_and_morty/internet_connection/cubit/internet_connection_cubit.dart';
-import 'package:ric_and_morty/internet_connection/widget/internet_connection_widget.dart';
-import 'package:ric_and_morty/locator_service.dart';
+import 'package:ric_and_morty/feature/characters/data/repository/character_repository.dart';
+import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
+import 'package:ric_and_morty/feature/internet_connection/cubit/internet_connection_cubit.dart';
+import 'package:ric_and_morty/feature/internet_connection/widget/internet_connection_widget.dart';
+import 'package:ric_and_morty/di/locator_service.dart';
 
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();

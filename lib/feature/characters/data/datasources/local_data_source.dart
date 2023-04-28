@@ -2,8 +2,8 @@
 import 'dart:convert';
 
 import 'package:hive/hive.dart';
-import 'package:ric_and_morty/characters/domain/entities/character/character.dart';
 import 'package:ric_and_morty/core/error/exception.dart';
+import 'package:ric_and_morty/feature/characters/domain/entities/character/character.dart';
 
 abstract class HiveBox {
   static const String character = 'person_list';
@@ -18,6 +18,7 @@ abstract class CharacterLocalDataSource {
 class CharacterLocalDataSourceIm implements CharacterLocalDataSource {
   final Box<List<String>> hiveBox;
   CharacterLocalDataSourceIm({required this.hiveBox});
+
 
   @override
   Future<List<Character>> getLastCharactersFromCache() async {

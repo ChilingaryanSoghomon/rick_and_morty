@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ric_and_morty/locator_service.dart' as di;
+import 'package:ric_and_morty/di/locator_service.dart' as di;
 import 'package:ric_and_morty/my_app.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';
-import 'package:ric_and_morty/internet_connection/cubit/internet_connection_cubit.dart';
+import 'package:ric_and_morty/feature/internet_connection/cubit/internet_connection_cubit.dart';
 
 class CachedNetworkImageWidget extends StatelessWidget {
   const CachedNetworkImageWidget({

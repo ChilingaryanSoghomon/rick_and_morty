@@ -6,8 +6,7 @@ part of 'character.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Character _$CharacterEntityFromJson(Map<String, dynamic> json) =>
-    Character(
+Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       id: json['id'] as int,
       name: json['name'] as String,
       status: json['status'] as String,
@@ -23,8 +22,7 @@ Character _$CharacterEntityFromJson(Map<String, dynamic> json) =>
       created: json['created'] as String,
     );
 
-Map<String, dynamic> _$CharacterEntityToJson(Character instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'status': instance.status,
