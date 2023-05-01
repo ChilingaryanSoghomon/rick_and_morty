@@ -7,6 +7,9 @@ abstract class CharacterState extends Equatable {
   List<Object> get props => [];
 }
 
+class CharacterEmptyState extends CharacterState {
+  const CharacterEmptyState();
+}
 
 class CharacterInitialState extends CharacterState {
   const CharacterInitialState();
@@ -31,8 +34,4 @@ class CharacterLoadedState extends CharacterState {
 class CharacterLoadedSearchState extends CharacterState {
   const CharacterLoadedSearchState({required this.character});
   final List<Character> character;
-}
-
-class CharacterErrorState extends CharacterState {
-  const CharacterErrorState();
 }

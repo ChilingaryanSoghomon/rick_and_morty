@@ -21,10 +21,10 @@ class CharactersCartWidget extends StatelessWidget {
       child: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) {
           List<Character> characters = [];
-          if (state is CharacterErrorState) {
+          if (state is CharacterEmptyState) {
             return const Center(
               child: Text(
-                LocaleKeys.characters_not_founds,
+                'characters not founds',
                 style: TextStyle(fontSize: 18),
               ),
             );

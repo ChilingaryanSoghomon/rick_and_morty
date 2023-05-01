@@ -46,19 +46,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text(LocaleKeys.rick_and_morty.tr()),
-        
-        // leading: 
-        // ElevatedButton(
-        //   onPressed: () {
-        //     context.locale == const Locale('en')
-        //         ? context.setLocale(const Locale('ru'))
-        //         : context.setLocale(const Locale('en'));
-        //   },
-        //   child: const Icon(Icons.settings),
-        // ),
+        title: Text(LocaleKeys.rick_and_morty.tr()),
       ),
-      // endDrawer: const DrawerWidget(),
+      endDrawer: const DrawerWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -75,44 +65,70 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// class DrawerWidget extends StatelessWidget {
-//   const DrawerWidget({
-//     super.key,
-//   });
+class DrawerWidget extends StatelessWidget {
+  const DrawerWidget({
+    super.key,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Drawer(
-    
-//     child: ListView(
-//     padding: EdgeInsets.zero,
-//     children: const <Widget>[
-//       DrawerHeader(
-        
-//         child: Center(
-//           child: Text(
-//             LocaleKeys.settings,
-//             style: TextStyle(
-//               color: Colors.white,
-//               fontSize: 28,
-//             ),
-//           ),
-//         ),
-//       ),
-//       ListTile(
-//         leading: Icon(Icons.message),
-//         title: Text('Messages'),
-//       ),
-//       ListTile(
-//         leading: Icon(Icons.account_circle),
-//         title: Text('Profile'),
-//       ),
-//       ListTile(
-//         leading: Icon(Icons.settings),
-//         title: Text('Settings'),
-//       ),
-//     ],
-//     ),
-//   );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: Center(
+              child: Text(
+                LocaleKeys.settings.tr(),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: PopupMenuButton<Locale>(
+              itemBuilder: (BuildContext context) {
+                return <PopupMenuEntry<Locale>>[
+                  PopupMenuItem<Locale>(
+                    value: const Locale('hy'),
+                    child: Text(LocaleKeys.armenian.tr()),
+                  ),
+                  PopupMenuItem<Locale>(
+                    value: const Locale('en'),
+                    child: Text(LocaleKeys.english.tr()),
+                  ),
+                  PopupMenuItem<Locale>(
+                    value: const Locale('ru'),
+                    child: Text(LocaleKeys.russian.tr()),
+                  ),
+                ];
+              },
+              onSelected: (Locale selectedLocale) {
+                context.setLocale(selectedLocale);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 30, right: 20),
+                      child: Icon(Icons.language),
+                    ),
+                    Text(
+                      LocaleKeys.language.tr(),
+                      style: const TextStyle(fontSize: 25),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

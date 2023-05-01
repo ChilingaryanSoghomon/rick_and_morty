@@ -15,14 +15,31 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
-  "characters_not_founds": "characters not founds",
+  "characters_not_founds": "Characters not founds",
   "rick_and_morty": "Rick and Morty",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "language",
+  "english": "English",
+  "russian": "Language",
+  "armenian": "Armenian"
+};
+static const Map<String,dynamic> hy = {
+  "characters_not_founds": "Պերսոնաժներ չեն գտնվել",
+  "rick_and_morty": "Ռիկը և Մորտին",
+  "settings": "Կարգավորումներ",
+  "language": "Լեզու",
+  "english": "Անգլերեն",
+  "russian": "Ռուսերեն",
+  "armenian": "Հայերեն"
 };
 static const Map<String,dynamic> ru = {
-  "characters_not_founds": "персонажи не найдены",
+  "characters_not_founds": "Персонажи не найдены",
   "rick_and_morty": "Рик и Морти",
-  "settings": "Настройки"
+  "settings": "Настройки",
+  "language": "Язык",
+  "english": "Англиски",
+  "russian": "Русский",
+  "armenian": "Армянский"
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ru": ru};
+static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "hy": hy, "ru": ru};
 }

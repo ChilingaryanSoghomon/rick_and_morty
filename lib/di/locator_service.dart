@@ -13,17 +13,18 @@ Future<void> setup() async {
   final box = await Hive.openBox<List<String>>(HiveBox.character);
 
   getIt.registerLazySingleton(() => CharacterRepositoryIm(
-        localDataSource: getIt<CharacterLocalDataSourceImpl>(),
+        localDataSource: getIt<CharacterLocalDataSourceIm>(),
         networkInfo: getIt<NetworkInfo>(),
-        remoteDataSource: getIt<CharacterRemoteDataSourceImpl>(),
+        remoteDataSource: getIt<CharacterRemoteDataSourceIm>(),
       ));
   getIt.registerLazySingleton(
-    () => CharacterLocalDataSourceImpl(hiveBox: box),
+    () => CharacterLocalDataSourceIm(hiveBox: box),
   );
   getIt.registerLazySingleton(() => NetworkInfo(
-        connectionChecker: getIt<InternetConnectionChecker>(),
+        getIt<InternetConnectionChecker>(),
       ));
 
   getIt.registerLazySingleton(() => InternetConnectionChecker());
-  getIt.registerLazySingleton(() => CharacterRemoteDataSourceImpl());
+  getIt.registerLazySingleton(() => CharacterRemoteDataSourceIm());
+
 }

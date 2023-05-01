@@ -1,5 +1,9 @@
 {
-    "characters_not_founds" : "characters not founds",
+    "characters_not_founds" : "Characters not founds",
     "rick_and_morty" : "Rick and Morty",
-    "settings" : "Settings"
+    "settings" : "Settings",
+    "language": "language",
+    "english": "English",
+    "russian": "Language",
+    "armenian": "Armenian"
 }

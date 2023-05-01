@@ -1,3 +1,4 @@
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';

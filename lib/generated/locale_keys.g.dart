@@ -4,5 +4,9 @@ abstract class  LocaleKeys {
   static const characters_not_founds = 'characters_not_founds';
   static const rick_and_morty = 'rick_and_morty';
   static const settings = 'settings';
+  static const language = 'language';
+  static const english = 'english';
+  static const russian = 'russian';
+  static const armenian = 'armenian';
 
 }
