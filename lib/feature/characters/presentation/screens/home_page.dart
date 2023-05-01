@@ -1,12 +1,8 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
 import 'package:ric_and_morty/feature/characters/presentation/widgets/characters_cart_widget.dart';
 import 'package:ric_and_morty/feature/characters/presentation/widgets/custom_text_field_widget.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         _focusNode.unfocus();
       }
       if (_scrollController.position.atEdge) {
-        if (_scrollController.position.pixels != 0 ) {
+        if (_scrollController.position.pixels != 0) {
           context.read<CharacterBloc>().add(
                 const CharacterLoadingAddPageEvent(),
               );
@@ -50,13 +46,16 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CustomTextFieldWidget(focusNode: _focusNode, characterBloc: characterBloc),
-            CharactersCartWidget(scrollController: _scrollController),
+            CustomTextFieldWidget(
+              focusNode: _focusNode,
+              characterBloc: characterBloc,
+            ),
+            CharactersCartWidget(
+              scrollController: _scrollController,
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
