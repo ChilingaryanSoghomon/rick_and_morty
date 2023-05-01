@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ric_and_morty/feature/characters/presentation/bloc/character_bloc.dart';
 import 'package:ric_and_morty/feature/characters/presentation/widgets/character_card_widget.dart';
 import 'package:ric_and_morty/feature/characters/presentation/widgets/character_lInitial_widget.dart';
+import 'package:ric_and_morty/generated/locale_keys.g.dart';
 
 import '../../domain/entities/character/character.dart';
 
@@ -23,7 +24,7 @@ class CharactersCartWidget extends StatelessWidget {
           if (state is CharacterErrorState) {
             return const Center(
               child: Text(
-                'characters not founds',
+                LocaleKeys.characters_not_founds,
                 style: TextStyle(fontSize: 18),
               ),
             );
