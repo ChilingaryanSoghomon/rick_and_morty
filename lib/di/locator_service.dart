@@ -20,11 +20,11 @@ Future<void> setup() async {
   getIt.registerLazySingleton(
     () => CharacterLocalDataSourceIm(hiveBox: box),
   );
+  getIt.registerLazySingleton(() => InternetConnectionChecker.instance);
   getIt.registerLazySingleton(() => NetworkInfo(
         getIt<InternetConnectionChecker>(),
       ));
 
-  getIt.registerLazySingleton(() => InternetConnectionChecker());
   getIt.registerLazySingleton(() => CharacterRemoteDataSourceIm());
 
 }

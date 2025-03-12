@@ -16,6 +16,9 @@ class InternetConnectionCubit extends Cubit<InternetStatusState> {
         case InternetConnectionStatus.disconnected:
           emit(InternetStatusState.disconnected);
           break;
+        case InternetConnectionStatus.slow:
+          // TODO: Handle this case.
+          throw UnimplementedError();
       }
     });
   }
